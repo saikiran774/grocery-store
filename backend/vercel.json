@@ -3,29 +3,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "client/build"
+      "src": "index.js",
+      "use": "@vercel/node",
+      "config" : {
+        "includesFiles" :[
+          "dist/**"
+        ]
       }
     }
+    
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/client/build/index.html"
+      "dest": "index.js"
     }
-  ],
-  "env": {
-    "MONGO_URI": "mongodb+srv://officialsai74:officialsai74@cluster0.er7oi1v.mongodb.net",
-    "JWT_SECRET": "@jwt_secret"
-  }
+   
+  ]
+ 
 }
