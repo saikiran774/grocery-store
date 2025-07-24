@@ -25,7 +25,7 @@
     }
   ],
   "env": {
-    "MONGODB_URI": "@mongodb_uri",
+    "MONGO_URI": "mongodb+srv://officialsai74:officialsai74@cluster0.er7oi1v.mongodb.net",
     "JWT_SECRET": "@jwt_secret"
   }
 }
