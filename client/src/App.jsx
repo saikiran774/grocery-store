@@ -16,7 +16,8 @@ import SellerLayout from "./pages/seller/SellerLayout";
 import AddProduct from "./pages/seller/AddProduct";
 import ProductList from "./pages/seller/ProductList";
 import Orders from "./pages/seller/Orders";
-import { AppContext } from './context/appContext'; 
+import { AppContext } from './context/AppContext'; 
+
 
 const App = () => {
   const isSellerPath = useLocation().pathname.includes("seller");
