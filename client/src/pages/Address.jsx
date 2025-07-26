@@ -4,6 +4,7 @@ import { AppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
 
 const Address = () => {
+  const API = import.meta.env.VITE_API_URL
   const [address, setAddress] = React.useState({
     firstName: "",
     lastName: "",
@@ -23,7 +24,7 @@ const Address = () => {
   const submitHanlder = async (e) => {
     try {
       e.preventDefault();
-      const { data } = await axios.post("/api/address/add", { address });
+      const { data } = await axios.post(`${API}//api/address/add`, { address });
       console.log("data", data);
       if (data.success) {
         toast.success(data.message);

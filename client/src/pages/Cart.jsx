@@ -4,7 +4,7 @@ import { dummyAddress } from "../assets/assets";
 import axios from "axios";
 import toast from "react-hot-toast";
 const Cart = () => {
-  const API = import.meta.env.VITE_BACKEND_URL
+  const API = import.meta.env.VITE_API_URL
   const {
     products,
     navigate,
