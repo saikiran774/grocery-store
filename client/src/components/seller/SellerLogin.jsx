@@ -11,10 +11,10 @@ const SellerLogin = () => {
     }
   }, [isSeller]);
   const handleSubmit = async (e) => {
-    const API  = import.meta.env.VITE_API_URL
+   
     try {
       e.preventDefault();
-      const { data } = await axios.post(`${API}/api/seller/login`, {
+      const { data } = await axios.post(`/api/seller/login`, {
         email,
         password,
       });

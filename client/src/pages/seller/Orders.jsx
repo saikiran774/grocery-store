@@ -4,7 +4,7 @@ import { assets, dummyOrders } from "../../assets/assets";
 import toast from "react-hot-toast";
 
 const Orders = () => {
-  const API = import.meta.env.VITE_API_URL
+  
   const boxIcon =
     "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/e-commerce/boxIcon.svg";
 
@@ -12,7 +12,7 @@ const Orders = () => {
   const { axios } = useContext(AppContext);
   const fetchOrders = async () => {
     try {
-      const { data } = await axios.get(`${API}/api/order/seller`);
+      const { data } = await axios.get(`/api/order/seller`);
       if (data.success) {
         setOrders(data.orders);
       } else {

@@ -2,12 +2,12 @@ import toast from "react-hot-toast";
 import { useAppContext } from "../../context/AppContext";
 
 const ProductList = () => {
-  const API = import.meta.env.VITE_API_URL
+ 
   const { products, fetchProducts, axios } = useAppContext();
 
   const toggleStock = async (id, inStock) => {
     try {
-      const { data } = await axios.post(`${API}/api/product/stock`, { id, inStock });
+      const { data } = await axios.post(`/api/product/stock`, { id, inStock });
       if (data.success) {
         fetchProducts();
         toast.success(data.message);
