@@ -9,9 +9,10 @@ const Auth = () => {
   const { setShowUserLogin, setUser, axios, navigate } = useAppContext();
 
   const handleSubmit = async (e) => {
+    const API = import.meta.env.VITE_BACKEND_URL
     try {
       e.preventDefault();
-      const { data } = await axios.post(`/api/user/${state}`, {
+      const { data } = await axios.post(`${API}/api/user/${state}`, {
         name,
         email,
         password,
