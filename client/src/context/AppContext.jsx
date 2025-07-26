@@ -18,8 +18,9 @@ export const AppContextProvider = ({ children }) => {
 
   // check seller status
   const fetchSeller = async () => {
+    const API = import.meta.env.VITE_BACKEND_URL
     try {
-      const { data } = await axios.get("/api/seller/is-auth");
+      const { data } = await axios.get(`${API}/api/seller/is-auth`);
       if (data.success) {
         setIsSeller(true);
       } else {
@@ -33,7 +34,7 @@ export const AppContextProvider = ({ children }) => {
   // fetch user auth status ,user Data and cart items
   const fetchUser = async () => {
     try {
-      const { data } = await axios.get("/api/user/is-auth");
+      const { data } = await axios.get(`${API}/api/user/is-auth`);
       if (data.success) {
         setUser(data.user);
         setCartItems(data.user.cart);
@@ -48,7 +49,7 @@ export const AppContextProvider = ({ children }) => {
   // fetch products
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get("/api/product/list");
+      const { data } = await axios.get(`${API}/api/product/list`);
       if (data.success) {
         setProducts(data.products);
       } else {

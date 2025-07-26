@@ -4,11 +4,12 @@ import { AppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
 
 const MyOrders = () => {
+  const API =  import.meta.env.VITE_BACKEND_URL
   const [myOrders, setMyOrders] = useState([]);
   const { axios, user } = useContext(AppContext);
   const fetchOrders = async () => {
     try {
-      const { data } = await axios.get("/api/order/user");
+      const { data } = await axios.get(`${API}/api/order/user`);
       if (data.success) {
         setMyOrders(data.orders);
       } else {

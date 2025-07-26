@@ -12,6 +12,7 @@ const AddProduct = () => {
   const [offerPrice, setOfferPrice] = useState("");
 
   const handleSubmit = async (e) => {
+       const API = import.meta.env.VITE_BACKEND_URL
     try {
       e.preventDefault();
 
@@ -26,7 +27,7 @@ const AddProduct = () => {
         formData.append("image", files[i]);
       }
 
-      const { data } = await axios.post("/api/product/add-product", formData);
+      const { data } = await axios.post(`${API}/api/product/add-product`, formData);
       if (data.success) {
         toast.success(data.message);
         setName("");

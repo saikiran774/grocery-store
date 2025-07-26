@@ -17,7 +17,7 @@ const app = express();
 
 await connectCloudinary();
 // allow multiple origins
-const allowedOrigins = ["https://grocery-store-client-lime.vercel.app"];
+const allowedOrigins = ["https://grocery-store-client-lime.vercel.app" , " http://localhost:5173"];
 //middlewares
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(cookieParser());

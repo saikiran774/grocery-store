@@ -4,6 +4,7 @@ import { dummyAddress } from "../assets/assets";
 import axios from "axios";
 import toast from "react-hot-toast";
 const Cart = () => {
+  const API = import.meta.env.VITE_BACKEND_URL
   const {
     products,
     navigate,
@@ -38,7 +39,7 @@ const Cart = () => {
 
   const getAddress = async () => {
     try {
-      const { data } = await axios.get("/api/address/get");
+      const { data } = await axios.get(`${API}/api/address/get`);
       if (data.success) {
         setAddress(data.addresses);
         if (data.addresses.length > 0) {
