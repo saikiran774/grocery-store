@@ -18,7 +18,7 @@ export const AppContextProvider = ({ children }) => {
 
   // check seller status
   const fetchSeller = async () => {
-    const API = import.meta.env.VITE_BACKEND_URL
+    const API = import.meta.env.VITE_APIURL
     try {
       const { data } = await axios.get(`${API}/api/seller/is-auth`);
       if (data.success) {
@@ -34,7 +34,7 @@ export const AppContextProvider = ({ children }) => {
   // fetch user auth status ,user Data and cart items
   const fetchUser = async () => {
     try {
-      const { data } = await axios.get(`${API}/api/user/is-auth`);
+      const { data } = await axios.get(`${API}/api/user/is-auth`, {withCredentials : true});
       if (data.success) {
         setUser(data.user);
         setCartItems(data.user.cart);
