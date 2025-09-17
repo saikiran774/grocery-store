@@ -23,7 +23,3 @@ It allows users to browse products, add items to their cart, place orders, and f
 - **Deployment:** Vercel 
 
 ---
-
-
-git clone https://github.com/saikiran774/grocery-store.git
-cd grocery-store
